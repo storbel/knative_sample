@@ -1,0 +1,11 @@
+.content {
+    width: 80%;
+    font-size: 60px;
+    font-family: Roboto;
+    margin: auto;
+    font-weight: lighter;
+    text-align: center;
+    margin-top: 100px;
+    /*color: #00957f;*/
+    color: #008acc;
+}
