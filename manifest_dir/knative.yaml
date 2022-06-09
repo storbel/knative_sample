@@ -11,7 +11,7 @@ spec:
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      app: autodocs
+      app: knative
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -21,13 +21,13 @@ spec:
     metadata:
       creationTimestamp: null
       labels:
-        app: autodocs
+        app: knative
     spec:
       containers:
 #      - image: nexus-private-registry.monaco-gouvernement.mc/nomen-backserver-1.0.0-rc5:1.2
       - image: image-registry.openshift-image-registry.svc:5000/autodocs/knative:latest
         imagePullPolicy: IfNotPresent
-        name: nomen-backserver
+        name: knative
         ports:
         - containerPort: 8080
           protocol: TCP
