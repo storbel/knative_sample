@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: "1"
+  name: knative
+  namespace: autodocs
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 3
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: autodocs
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: autodocs
+    spec:
+      containers:
+#      - image: nexus-private-registry.monaco-gouvernement.mc/nomen-backserver-1.0.0-rc5:1.2
+      - image: image-registry.openshift-image-registry.svc:5000/autodocs/knative:latest
+        imagePullPolicy: IfNotPresent
+        name: nomen-backserver
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+
