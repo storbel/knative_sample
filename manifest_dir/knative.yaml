@@ -2,8 +2,8 @@ apiVersion: v1
 kind: Namespace
 metadata:
   labels:
-    kubernetes.io/metadata.name: pipelines-tutorial
-  name: pipelines-tutorial
+    kubernetes.io/metadata.name: autodocs
+  name: autodocs
 spec:
   finalizers:
   - kubernetes
