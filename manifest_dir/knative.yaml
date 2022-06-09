@@ -34,7 +34,7 @@ spec:
         app: knative
     spec:
       containers:
-      - image: image-registry.openshift-image-registry.svc:5000/autodocs/knative:latest
+      - image: image-registry.openshift-image-registry.svc:5000/autodocs/knative
         imagePullPolicy: IfNotPresent
         name: knative
         ports:
